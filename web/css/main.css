@@ -1,0 +1,38 @@
+body.body{
+    background-color: beige;
+}
+
+#table{
+    border-collapse: collapse;
+    border: 3px solid black;
+    caption-side: top;
+    align-content: center;
+
+}
+
+th, td{
+    border: 1px solid black;
+}
+
+#form{
+    margin-left: 30px;
+}
+
+#addln{
+    margin-left: 2px;
+}
+
+#delln{
+    margin-left: 2px;
+}
+#upln{
+    margin-left: 2px;
+}
+
+#upnln{
+    margin-left: 3px;
+}
+
+#upemail{
+    margin-left: 28px;
+}
