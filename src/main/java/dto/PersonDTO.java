@@ -2,6 +2,8 @@ package dto;
 
 import dao.PersonDAO;
 
+import java.util.Objects;
+
 public class PersonDTO {
     private String firstName;
     private String lastName;
@@ -33,5 +35,18 @@ public class PersonDTO {
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        PersonDTO personDTO = (PersonDTO) o;
+        return Objects.equals(firstName, personDTO.firstName) && Objects.equals(lastName, personDTO.lastName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(firstName, lastName);
     }
 }

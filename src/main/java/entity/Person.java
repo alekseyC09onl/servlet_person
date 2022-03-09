@@ -1,10 +1,15 @@
 package entity;
 
+import java.util.Objects;
+
 public class Person {
     private Integer id;
     private String firstName;
     private String lastName;
     private String email;
+
+    public Person() {
+    }
 
     public Person(Integer id, String firstName, String lastName, String email) {
         this.id = id;
@@ -54,6 +59,19 @@ public class Person {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Person person = (Person) o;
+        return Objects.equals(id, person.id) && Objects.equals(firstName, person.firstName) && Objects.equals(lastName, person.lastName) && Objects.equals(email, person.email);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, firstName, lastName, email);
     }
 
     @Override
